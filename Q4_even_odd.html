@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Even or Odd Checker</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 40px 15px; }
+    input, button { padding: 8px 14px; font-size: 16px; margin: 5px; }
+    #result { margin-top: 20px; font-size: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Even or Odd Checker</h1>
+
+  <input type="number" id="numberInput" placeholder="Enter a number">
+  <button onclick="checkNumber()">Check Number</button>
+  <button onclick="clearResult()">Clear</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkNumber() {
+      var value = document.getElementById("numberInput").value;
+      var result = document.getElementById("result");
+
+      if (value === "") {
+        result.innerText = "Please enter a number.";
+        return;
+      }
+
+      var num = Number(value);
+      if (num % 2 === 0) {
+        result.innerText = num + " is Even";
+      } else {
+        result.innerText = num + " is Odd";
+      }
+    }
+
+    function clearResult() {
+      document.getElementById("result").innerText = "";
+      document.getElementById("numberInput").value = "";
+    }
+  </script>
+</body>
+</html>
